@@ -2,10 +2,13 @@ import React from 'react'
 import styles from './styles.module.css'
 
 export default function Login() {
-    const {container, form, inputContainer, input, button} = styles
+    const {logo, container, form, inputContainer, input, button} = styles
 
   return (
     <div className={container}>
+        <div className={logo}>
+        Swedish Events Planners SEP
+        </div>
         <div className={form}>
         <form>
         <h2>Login</h2>
