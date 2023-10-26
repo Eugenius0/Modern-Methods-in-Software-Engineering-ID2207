@@ -1,24 +1,19 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './pages/login';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <BrowserRouter>
+        <div className='pages'>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
-
-export default App;
