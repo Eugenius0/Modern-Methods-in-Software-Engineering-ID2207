@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/login';
 import EventRequest from './pages/eventRequest/eventRequest';
 import Navbar from './components/navbar';
+import CreateEventRequest from './pages/createEventRequest/createEventRequest';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -20,6 +21,7 @@ export default function App() {
             <Route path='/' element={<Login />} />
             <Route path='/login' element={<Login />} />
             <Route path='/eventRequest' element={<EventRequest />} />
+            <Route path='/createEventRequest' element={<CreateEventRequest />} />
           </Routes>
         </div>
       </BrowserRouter>

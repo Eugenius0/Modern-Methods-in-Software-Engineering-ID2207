@@ -5,14 +5,14 @@ import { authenticateUser, getRoleByEmail } from '../../utils/auth'
 import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
-    const {logo, container, form, inputContainer, input, button, warning} = styles
+    const {logo, container, formContainer, form, inputContainer, input, button, warning} = styles
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showWarning, setShowWarning] = useState(false)
     const navigate = useNavigate()
 
-    const { userRole, setUserRole } = useContext(UserContext);
+    const { setUserRole } = useContext(UserContext);
 
     const handleLogin = () => {
       const role = getRoleByEmail(email)
@@ -51,8 +51,8 @@ export default function Login() {
         <div className={logo}>
         Swedish Events Planners SEP
         </div>
-        <div className={form}>
-        <form>
+        <div className={formContainer}>
+        <form className={form}>
         <h2>Login</h2>
         <div className={inputContainer}>
         <input 

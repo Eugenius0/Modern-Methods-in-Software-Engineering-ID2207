@@ -42,7 +42,7 @@
     100%{background-position:0% 50%}
 }
 
-.form {
+.formContainer {
     display: flex;
     width: 40%;
     max-width: 820px;
@@ -52,7 +52,7 @@
     overflow: hidden;
 }
 
-form {
+.form {
     padding: 2.3rem 2.2rem;
     z-index: 10;
     position: relative;
