@@ -39,15 +39,15 @@
 .pending {
     padding: 5px;
     background: grey;
-    width: 100px;
+    width: 150px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.approved {
+.scsApproved {
     padding: 5px;
-    background: green;
-    width: 100px;
+    background: rgb(45, 195, 22);
+    width: 150px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -55,7 +55,31 @@
 .declined {
     padding: 5px;
     background: red;
-    width: 100px;
+    width: 150px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.fmFeedback {
+    padding: 5px;
+    background: rgb(29, 127, 147);
+    width: 150px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.amApproved {
+    padding: 5px;
+    background: green;
+    width: 150px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.scheduledMeeting {
+    padding: 5px;
+    background: rgb(155, 109, 24);
+    width: 150px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

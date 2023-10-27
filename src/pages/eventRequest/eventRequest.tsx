@@ -5,11 +5,14 @@ import eventRequestData from '../../mockData/eventRequestData.json'
 
 export default function EventRequest() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, approved, declined} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, declined} = styles
 
     const pendingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "pending")
-    const approvedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "approved")
+    const scsApprovedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "scsApproved")
     const declinedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "declined")
+    const fmFeedbackRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "fmFeedback")
+    const amApprovedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "amApproved")
+    const scheduledMeetingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "scheduledMeeting")
 
   return (
     <>
@@ -24,7 +27,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {declinedRequests.length !== 0 ?
-        <EventRequestList eventRequests={declinedRequests} /> : <div><br />Empty list</div>}
+        <EventRequestList eventRequests={declinedRequests} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -37,12 +40,39 @@ export default function EventRequest() {
       </div>
       </div>
       <div className={eventRequestList}>
-      <div className={approved}>
-        Approved
+      <div className={scsApproved}>
+        SCS Approved
       </div>
       <div className={listContent}>
-      {approvedRequests.length !== 0 ?
-        <EventRequestList eventRequests={approvedRequests} /> : <div><br />Empty list</div>}
+      {scsApprovedRequests.length !== 0 ?
+        <EventRequestList eventRequests={scsApprovedRequests} /> : <div>Empty list</div>}
+      </div>
+      </div>
+      <div className={eventRequestList}>
+      <div className={fmFeedback}>
+        FM Feedback
+      </div>
+      <div className={listContent}>
+      {fmFeedbackRequests.length !== 0 ?
+        <EventRequestList eventRequests={fmFeedbackRequests} /> : <div>Empty list</div>}
+      </div>
+      </div>
+      <div className={eventRequestList}>
+      <div className={amApproved}>
+        AM Approved
+      </div>
+      <div className={listContent}>
+      {amApprovedRequests.length !== 0 ?
+        <EventRequestList eventRequests={amApprovedRequests} /> : <div>Empty list</div>}
+      </div>
+      </div>
+      <div className={eventRequestList}>
+      <div className={scheduledMeeting}>
+        Scheduled Meeting
+      </div>
+      <div className={listContent}>
+      {scheduledMeetingRequests.length !== 0 ?
+        <EventRequestList eventRequests={scheduledMeetingRequests} /> : <div>Empty list</div>}
       </div>
       </div>
     </div>
