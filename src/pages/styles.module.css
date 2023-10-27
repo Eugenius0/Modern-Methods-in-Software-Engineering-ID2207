@@ -143,10 +143,9 @@ form {
   transform: translateY(-50%);
 }
 
-.inputContainer span:before {
-    left: 50%;
-  }
-  
-  .inputContainer span:after {
-    right: 50%;
-  }
+.warning {
+    margin-top: 10px;
+    padding: 10px;
+    background: red;
+    border-radius: 999px;
+}
