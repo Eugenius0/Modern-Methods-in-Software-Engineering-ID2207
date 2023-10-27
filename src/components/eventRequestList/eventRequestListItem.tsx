@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 export type EventRequestListItemProps = {
@@ -7,16 +7,30 @@ export type EventRequestListItemProps = {
 
 export const EventRequestListItem = (props: EventRequestListItemProps) => {
 
-    const {item} = styles
+    const {item, details} = styles
     const { eventRequest } = props 
+
+    const [showDetails, setShowDetails] = useState(false)
+
+    const toggleShowDetails = () => {
+      setShowDetails(!showDetails);
+    };
 
   return (
     <div key={eventRequest.id}>
-        <div className={item}>
+        <div className={item} onClick={toggleShowDetails}>
             {eventRequest.eventType}
-            {eventRequest.startDate}
-            {eventRequest.endDate}
+            <br /> <br />
+            from {eventRequest.startDate} to {eventRequest.endDate}
         </div>
+        {showDetails && (
+          <div className={details}>
+          Client Name: {eventRequest.clientName} <br />
+          Expected Attendees: {eventRequest.expectedAttendees} <br />
+          Preferences: {eventRequest.preferences} <br />
+          Expected Budget: {eventRequest.expectedBudget}
+          </div>
+        )}
     </div>
   )
 }
