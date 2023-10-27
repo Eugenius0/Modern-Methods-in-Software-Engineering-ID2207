@@ -16,6 +16,43 @@
 .eventRequestList {
     position: relative;
     margin-right: auto;
-    left: 42.35%;
+    left: 37.5%;
     margin-top: 30px;
+}
+
+.listContent {
+    margin-top: 10px;
+    max-height: 300px;
+    width: 330px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    text-align: center;
+    display: block;
+    align-items: center;
+}
+
+.pending {
+    padding: 5px;
+    background: grey;
+    width: 100px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.approved {
+    padding: 5px;
+    background: green;
+    width: 100px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.declined {
+    padding: 5px;
+    background: red;
+    width: 100px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

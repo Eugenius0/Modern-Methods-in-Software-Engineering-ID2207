@@ -9,6 +9,7 @@ type User = {
     id: number,
     clientName: string,
     eventType: string,
+    status: string,
     startDate: string,
     endDate: string,
     expectedAttendees: number,
