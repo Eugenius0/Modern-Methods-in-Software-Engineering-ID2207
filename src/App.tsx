@@ -3,11 +3,13 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/login/login';
 import EventRequest from './pages/eventRequest/eventRequest';
+import Navbar from './components/navbar';
 
 export default function App() {
   return (
     <div className='App'>
       <BrowserRouter>
+      <Navbar />
         <div className='pages'>
           <Routes>
             <Route path='/' element={<Login />} />
