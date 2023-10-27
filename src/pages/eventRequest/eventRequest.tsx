@@ -2,10 +2,11 @@ import React from 'react'
 import styles from './styles.module.css'
 import { EventRequestList } from '../../components/eventRequestList'
 import eventRequestData from '../../mockData/eventRequestData.json'
+import { Link } from 'react-router-dom'
 
 export default function EventRequest() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, declined} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, declined, buttons, button} = styles
 
     const pendingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "pending")
     const scsApprovedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "scsApproved")
@@ -19,7 +20,11 @@ export default function EventRequest() {
     <div className={container}>
     <div className={title}>
           Event Requests
-      </div>
+    </div>
+    <div className={buttons}>
+      <Link to="/eventRequest" className={button}>Create Event Request</Link>
+      <Link to="/eventRequest" className={button}>Register Client</Link>
+    </div>
     <div className={gridContainer}>
       <div className={eventRequestList}>
       <div className={declined}>
