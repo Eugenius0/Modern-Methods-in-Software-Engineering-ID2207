@@ -5,7 +5,7 @@ import eventRequestData from '../../mockData/eventRequestData.json'
 
 export default function EventRequest() {
 
-    const {container, title, eventRequestList, listContent, pending, approved, declined} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, approved, declined} = styles
 
     const pendingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "pending")
     const approvedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "approved")
@@ -14,8 +14,18 @@ export default function EventRequest() {
   return (
     <>
     <div className={container}>
-      <div className={title}>
+    <div className={title}>
           Event Requests
+      </div>
+    <div className={gridContainer}>
+      <div className={eventRequestList}>
+      <div className={declined}>
+        Declined
+      </div>
+      <div className={listContent}>
+      {declinedRequests.length !== 0 ?
+        <EventRequestList eventRequests={declinedRequests} /> : <div><br />Empty list</div>}
+      </div>
       </div>
       <div className={eventRequestList}>
       <div className={pending}>
@@ -35,15 +45,7 @@ export default function EventRequest() {
         <EventRequestList eventRequests={approvedRequests} /> : <div><br />Empty list</div>}
       </div>
       </div>
-      <div className={eventRequestList}>
-      <div className={declined}>
-        Declined
-      </div>
-      <div className={listContent}>
-      {declinedRequests.length !== 0 ?
-        <EventRequestList eventRequests={declinedRequests} /> : <div><br />Empty list</div>}
-      </div>
-      </div>
+    </div>
     </div>
       </>
   )
