@@ -1,0 +1,21 @@
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 30px;
+    letter-spacing: 6px;
+    text-align: center;
+}
+
+.eventRequestList {
+    position: relative;
+    margin-right: auto;
+    left: 42.35%;
+    margin-top: 30px;
+}

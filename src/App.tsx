@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Login from './pages/login';
-import EventRequests from './pages/eventRequest';
+import Login from './pages/login/login';
+import EventRequest from './pages/eventRequest/eventRequest';
 
 export default function App() {
   return (
@@ -12,7 +12,7 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Login />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/eventRequests' element={<EventRequests />} />
+            <Route path='/eventRequest' element={<EventRequest />} />
           </Routes>
         </div>
       </BrowserRouter>

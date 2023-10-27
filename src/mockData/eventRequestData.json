@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "clientName": "John Doe",
+      "eventType": "Birthday Party",
+      "startDate": "2023-10-30",
+      "endDate": "2023-10-31",
+      "expectedAttendees": 50,
+      "preferences": ["Balloons", "Live Band", "Cake"],
+      "expectedBudget": 1000
+    },
+    {
+      "id": 2,
+      "clientName": "Alice Smith",
+      "eventType": "Conference",
+      "startDate": "2023-11-15",
+      "endDate": "2023-11-17",
+      "expectedAttendees": 150,
+      "preferences": ["Projector", "Catering", "Conference Room"],
+      "expectedBudget": 5000
+    },
+    {
+      "id": 3,
+      "clientName": "Emily Johnson",
+      "eventType": "Wedding",
+      "startDate": "2023-12-05",
+      "endDate": "2023-12-07",
+      "expectedAttendees": 100,
+      "preferences": ["Flowers", "Photographer", "DJ"],
+      "expectedBudget": 3000
+    },
+    {
+      "id": 4,
+      "clientName": "Michael Brown",
+      "eventType": "Corporate Event",
+      "startDate": "2023-12-20",
+      "endDate": "2023-12-22",
+      "expectedAttendees": 200,
+      "preferences": ["Conference Room", "Catering", "Speakers"],
+      "expectedBudget": 7000
+    },
+    {
+      "id": 5,
+      "clientName": "Olivia Davis",
+      "eventType": "Anniversary Celebration",
+      "startDate": "2024-01-10",
+      "endDate": "2024-01-11",
+      "expectedAttendees": 75,
+      "preferences": ["Live Band", "Decorations", "Dinner"],
+      "expectedBudget": 1500
+    }
+  ]
+  
