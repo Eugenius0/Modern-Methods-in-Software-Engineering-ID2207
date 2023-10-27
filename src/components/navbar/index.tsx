@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import styles from './styles.module.css'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../App';
 
 export default function Navbar() {
-  const { navMenu, navLogo, navLink } = styles
+  const { navMenu, navLogo, navLink, role } = styles
+
+  const { userRole } = useContext(UserContext);
 
   return (
     <ul className={navMenu}>
@@ -21,6 +25,9 @@ export default function Navbar() {
       <Link to='/financialRequest' className={navLink}>
         <li>Financial Requests</li>
       </Link>
+      <div className={role}>
+        User Role: {userRole}
+      </div>
     </ul>
   )
 }

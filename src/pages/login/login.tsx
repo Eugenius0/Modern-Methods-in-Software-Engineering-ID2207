@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './styles.module.css'
-import { authenticateUser } from '../../utils/auth'
-import { Link } from 'react-router-dom'
+import { UserContext } from '../../App'
+import { authenticateUser, getRoleByEmail } from '../../utils/auth'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
     const {logo, container, form, inputContainer, input, button, warning} = styles
@@ -9,12 +10,21 @@ export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [showWarning, setShowWarning] = useState(false)
+    const navigate = useNavigate()
+
+    const { userRole, setUserRole } = useContext(UserContext);
 
     const handleLogin = () => {
-    authenticateUser(email, password) ? <Link to="/eventRequest"></Link> : setShowWarning(true)
+      const role = getRoleByEmail(email)
+      if (authenticateUser(email, password)) {
+        setUserRole(role)
+        navigate('/eventRequest')
+      } else {
+        setShowWarning(true);
+      }
     }
 
-          // Test function to simulate the logic
+  // Test function to simulate the logic
   const runLogicTest = () => {
     // Simulate a successful authentication
     setEmail('user1')

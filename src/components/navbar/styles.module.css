@@ -12,11 +12,12 @@
   
 .navLogo {
     display: block;
-    float: left;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 14px 16px;
+    color: #6610ec;
     text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: ease 0.3s;
 }
   
 .navLink {
@@ -32,4 +33,14 @@
 .navLink:hover {
     background: linear-gradient(#6610ec, #000);
     scale: 1.1;
+}
+
+.role {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 600px;
 }
