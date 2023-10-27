@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { authenticateUser } from '../utils/auth'
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     const {logo, container, form, inputContainer, input, button, warning} = styles
@@ -10,7 +11,7 @@ export default function Login() {
     const [showWarning, setShowWarning] = useState(false)
 
     const handleLogin = () => {
-    authenticateUser(email, password) ? alert('true') : setShowWarning(true)
+    authenticateUser(email, password) ? <Link to="/eventRequests"></Link> : setShowWarning(true)
     }
 
           // Test function to simulate the logic

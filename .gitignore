@@ -1,1 +1,11 @@
 node_modules
+# Ignore Node.js generated files
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Ignore TypeScript and ESLint cache files
+.cache/
+dist/
+*.tsbuildinfo
