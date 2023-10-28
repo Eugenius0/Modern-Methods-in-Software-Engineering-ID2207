@@ -23,7 +23,7 @@ export default function Stafffinancial() {
     </div>
     {userRole === 'PM' || userRole === 'SM' ?
     <div className={buttons}>
-      <Link to="/createfinancialRequest" className={button}>Create financial Request</Link>
+      <Link to="/createFinancialRequest" className={button}>Create Financial Request</Link>
     </div> :
     userRole === 'FM' ?
     <div className={buttons}>

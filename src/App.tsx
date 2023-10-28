@@ -13,6 +13,7 @@ import ErrorPage from './pages/errorPage/errorPage';
 import StaffRecruitment from './pages/staffRecruitment/staffRecruitment';
 import CreateRecruitmentRequest from './pages/createRecruitmentRequest/createRecruitmentRequest';
 import FinancialRequest from './pages/financialRequest/financialRequest';
+import CreateFinancialRequest from './pages/createFinancialRequest/createFinancialRequest';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -37,6 +38,7 @@ export default function App() {
             <Route path='/staffRecruitment' element={<StaffRecruitment />} />
             <Route path='/createRecruitmentRequest' element={<CreateRecruitmentRequest />} />
             <Route path='/financialRequest' element={<FinancialRequest />} />
+            <Route path='/createFinancialRequest' element={<CreateFinancialRequest />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>
