@@ -16,8 +16,8 @@ export default function Navbar() {
       <Link to='/eventRequest' className={navLink}>
         <li>Event Requests</li>
       </Link>
-      <Link to='/taskAssigment' className={navLink}>
-        <li>Task Assignment</li>
+      <Link to='/taskDistribution' className={navLink}>
+        <li>Task Distribution</li>
       </Link>
       <Link to='/staffRecruitment' className={navLink}>
         <li>Staff Recruitment</li>
@@ -26,7 +26,7 @@ export default function Navbar() {
         <li>Financial Requests</li>
       </Link>
       <div className={role}>
-        User Role: {userRole}
+        Logged in as: {userRole}
       </div>
     </ul>
   )

@@ -7,6 +7,7 @@ import Navbar from './components/navbar';
 import CreateEventRequest from './pages/createEventRequest/createEventRequest';
 import RegisterClient from './pages/registerClient/registerClient';
 import EventRequestDetails from './pages/eventRequestDetails/eventRequestDetails';
+import TaskDistribution from './pages/taskDistribution/taskDistribution';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -26,6 +27,7 @@ export default function App() {
             <Route path='/createEventRequest' element={<CreateEventRequest />} />
             <Route path='/registerClient' element={<RegisterClient />} />
             <Route path='/eventRequestDetails' element={<EventRequestDetails />} />
+            <Route path='/taskDistribution' element={<TaskDistribution />} />
           </Routes>
         </div>
       </BrowserRouter>

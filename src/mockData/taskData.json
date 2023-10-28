@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "referenceID": 1,
+        "subTeam": "Decorations",
+        "title": "Decorations for Birthday Party",
+        "description": "Create a classic-style event decoration",
+        "assignedTo": "John Doe",
+        "priority": "High",
+        "status": "pending",
+        "comment": "-" 
+    },
+    {
+        "id": 2,
+        "referenceID": 2,
+        "subTeam": "Decorations",
+        "title": "Decorations for Conference",
+        "description": "Organize special lightings for the event",
+        "assignedTo": "Alice Smith",
+        "priority": "Medium",
+        "status": "pending",
+        "comment": "-"
+    },
+    {
+        "id": 3,
+        "referenceID": 3,
+        "subTeam": "Decorations",
+        "title": "Decorations for Wedding",
+        "description": "Plan and execute a themed decoration",
+        "assignedTo": "Emily Johnson",
+        "priority": "Low",
+        "status": "pending",
+        "comment": "-"
+    },
+    {
+        "id": 4,
+        "referenceID": 4,
+        "subTeam": "Decorations",
+        "title": "Decorations for Corporate Event",
+        "description": "Design and set up a floral arrangement",
+        "assignedTo": "Michael Brown",
+        "priority": "High",
+        "status": "pending",
+        "comment": "-"
+    },
+    {
+        "id": 5,
+        "referenceID": 5,
+        "subTeam": "Decorations",
+        "title": "Decorations for Anniversary Celebration",
+        "description": "Coordinate with vendors for event props",
+        "assignedTo": "Olivia Davis",
+        "priority": "Medium",
+        "status": "commented",
+        "comment": "no extra budget required"
+    }
+]

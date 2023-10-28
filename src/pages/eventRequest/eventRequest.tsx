@@ -54,11 +54,11 @@ export default function EventRequest() {
         <button className={submitButton} type="submit">Submit</button>
       </div> 
         </> :
-      // userRole === 'AM' ?
+      userRole === 'AM' ?
       <div className={buttons}>
       <Link to="/eventRequest" className={button} id={btnGreen}>Approve</Link>
       <Link to="/eventRequest" className={button} id={btnRed}>Reject</Link>
-      </div>
+      </div> : <></>
     }
     <div className={gridContainer}>
       <div className={eventRequestList}>
