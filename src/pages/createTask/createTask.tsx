@@ -5,7 +5,7 @@ import taskData from '../../mockData/taskData.json';
 
 export default function CreateTask() {
 
-    const { container, pageTitle, formContainer, label, input, preferencesInput, pref, button, submitButton } = styles
+    const { container, pageTitle, formContainer, label, input, preferencesInput, pref, button } = styles
 
     const [referenceID, setReferenceID] = useState(0)
     const [title, setTitle] = useState('')
