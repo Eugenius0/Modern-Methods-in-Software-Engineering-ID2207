@@ -16,3 +16,8 @@ type User = {
     preferences: string[],
     expectedBudget: number,
   }
+
+  type Client = {
+    clientName: string,
+    clientMail: string,
+  }

@@ -132,7 +132,7 @@ export default function CreateEventRequest() {
       checked={preferences.includes('Option 1')}
       onChange={handlePreferencesChange}
     />
-    <label htmlFor="option1">Option 1</label>
+    <label htmlFor="option1">Decorations</label>
   </div>
   <div>
     <input
@@ -143,7 +143,7 @@ export default function CreateEventRequest() {
       checked={preferences.includes('Option 2')}
       onChange={handlePreferencesChange}
     />
-    <label htmlFor="option2">Option 2</label>
+    <label htmlFor="option2">Parties</label>
   </div>
   <div>
     <input
@@ -154,7 +154,7 @@ export default function CreateEventRequest() {
       checked={preferences.includes('Option 3')}
       onChange={handlePreferencesChange}
     />
-    <label htmlFor="option3">Option 3</label>
+    <label htmlFor="option3">Photos/filming</label>
   </div>
   <div>
     <input
@@ -165,7 +165,18 @@ export default function CreateEventRequest() {
       checked={preferences.includes('Option 4')}
       onChange={handlePreferencesChange}
     />
-    <label htmlFor="option4">Option 4</label>
+    <label htmlFor="option4">Breakfast, lunch, dinner</label>
+  </div>
+  <div>
+    <input
+      type="checkbox"
+      id="option4"
+      name="option4"
+      value="Option 4"
+      checked={preferences.includes('Option 4')}
+      onChange={handlePreferencesChange}
+    />
+    <label htmlFor="option4">Soft/hot drinks</label>
   </div>
 </div>
           <div>

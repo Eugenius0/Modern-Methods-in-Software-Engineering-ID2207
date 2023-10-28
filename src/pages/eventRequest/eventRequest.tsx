@@ -23,7 +23,7 @@ export default function EventRequest() {
     </div>
     <div className={buttons}>
       <Link to="/createEventRequest" className={button}>Create Event Request</Link>
-      <Link to="/eventRequest" className={button}>Register Client</Link>
+      <Link to="/registerClient" className={button}>Register Client</Link>
     </div>
     <div className={gridContainer}>
       <div className={eventRequestList}>
