@@ -38,6 +38,7 @@ export default function EventRequest() {
     <div className={buttons}>
       <Link to="/eventRequest" className={button} id={btnGreen}>Approve</Link>
       <Link to="/eventRequest" className={button} id={btnRed}>Reject</Link>
+      <Link to="/eventRequestDetails" className={button}>Event Request Details</Link>
       </div> :
       userRole === 'FM' ?
       <>

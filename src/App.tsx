@@ -6,6 +6,7 @@ import EventRequest from './pages/eventRequest/eventRequest';
 import Navbar from './components/navbar';
 import CreateEventRequest from './pages/createEventRequest/createEventRequest';
 import RegisterClient from './pages/registerClient/registerClient';
+import EventRequestDetails from './pages/eventRequestDetails/eventRequestDetails';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -24,6 +25,7 @@ export default function App() {
             <Route path='/eventRequest' element={<EventRequest />} />
             <Route path='/createEventRequest' element={<CreateEventRequest />} />
             <Route path='/registerClient' element={<RegisterClient />} />
+            <Route path='/eventRequestDetails' element={<EventRequestDetails />} />
           </Routes>
         </div>
       </BrowserRouter>
