@@ -6,6 +6,7 @@ const users: User[] = [
     { id: 5, email: 'user5@sep.com', password: 'password5', role: 'PM' },
     { id: 6, email: 'user6@sep.com', password: 'password6', role: 'SM' },
     { id: 7, email: 'user7@sep.com', password: 'password7', role: 'ST' },
+    { id: 7, email: 'user8@sep.com', password: 'password8', role: 'SHR' },
   ];
   
   export function authenticateUser(email: string, password: string): boolean {

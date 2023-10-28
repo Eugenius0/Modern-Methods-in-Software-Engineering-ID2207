@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "contractType": "Full-Time",
+      "requestingDepartment": "Human Resources",
+      "yearsOfExperience": "5+",
+      "jobTitle": "Software Engineer",
+      "jobDescription": "We are looking for a skilled software engineer to join our development team.",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "contractType": "Part-Time",
+      "requestingDepartment": "Marketing",
+      "yearsOfExperience": "3+",
+      "jobTitle": "Digital Marketing Specialist",
+      "jobDescription": "Seeking a digital marketing specialist to lead online marketing campaigns.",
+      "status": "approved"
+    },
+    {
+      "id": 3,
+      "contractType": "Full-Time",
+      "requestingDepartment": "Finance",
+      "yearsOfExperience": "7+",
+      "jobTitle": "Financial Analyst",
+      "jobDescription": "Experienced financial analyst needed for financial planning and analysis.",
+      "status": "rejected"
+    },
+    {
+      "id": 4,
+      "contractType": "Full-Time",
+      "requestingDepartment": "Engineering",
+      "yearsOfExperience": "5+",
+      "jobTitle": "Mechanical Engineer",
+      "jobDescription": "Join our team as a mechanical engineer and work on innovative projects.",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "contractType": "Full-Time",
+      "requestingDepartment": "Sales",
+      "yearsOfExperience": "3+",
+      "jobTitle": "Sales Manager",
+      "jobDescription": "Hiring a sales manager to lead and motivate our sales team.",
+      "status": "approved"
+    }
+  ]
+  

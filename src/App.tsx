@@ -10,6 +10,7 @@ import EventRequestDetails from './pages/eventRequestDetails/eventRequestDetails
 import TaskDistribution from './pages/taskDistribution/taskDistribution';
 import CreateTask from './pages/createTask/createTask';
 import ErrorPage from './pages/errorPage/errorPage';
+import StaffRecruitment from './pages/staffRecruitment/staffRecruitment';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -31,6 +32,7 @@ export default function App() {
             <Route path='/eventRequestDetails' element={<EventRequestDetails />} />
             <Route path='/taskDistribution' element={<TaskDistribution />} />
             <Route path='/createTask' element={<CreateTask />} />
+            <Route path='/staffRecruitment' element={<StaffRecruitment />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>

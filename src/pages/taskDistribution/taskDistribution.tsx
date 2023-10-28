@@ -7,7 +7,7 @@ import { TaskList } from '../../components/taskList'
 
 export default function TaskDistribution() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, buttons, button, submitButton, btnGreen, btnRed} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, buttons, button, submitButton} = styles
 
     const photographyTasks = taskData?.filter((task) => task.subTeam === "Photography" && task.status === "pending")
     const musicTasks = taskData?.filter((task) => task.subTeam === "Music")
@@ -29,7 +29,7 @@ export default function TaskDistribution() {
     <div className={title}>
           Task Distribution
     </div>
-    {userRole === 'PM' ?
+    {userRole === 'PM' || userRole === 'SM' ?
     <div className={buttons}>
       <Link to="/createTask" className={button}>Create Task</Link>
       <Link to="/staffRecruitment" className={button}>Staff Recruitment</Link>

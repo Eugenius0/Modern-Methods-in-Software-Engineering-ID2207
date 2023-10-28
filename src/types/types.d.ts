@@ -34,3 +34,13 @@ type User = {
     comment: string,
   }
 
+  type RecruitmentRequest = {
+    id: number,
+    contractType: string,
+    requestingDepartment: string,
+    yearsOfExperience: string,
+    jobTitle: string,
+    jobDescription: string,
+    status: string,
+  }
+

@@ -1,0 +1,22 @@
+.item {
+    margin-top: 20px;
+    padding: 10px;
+    border: black solid 2px;
+    width: 300px;
+    min-height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    transition: ease 0.3s;
+}
+
+.item:hover {
+    left: 10px;
+    cursor: pointer;
+    scale: 1.05;
+    background: linear-gradient(#6610ec, #000);
+}
+
+.details {
+    margin-top: 10px;
+    transition: ease 0.3s;
+}
