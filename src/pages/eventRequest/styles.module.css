@@ -53,7 +53,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.declined {
+.rejected {
     padding: 5px;
     background: red;
     width: 150px;
@@ -147,4 +147,51 @@
     transition: transform 0.5s;
     transform-origin: bottom right;
     transform: scale(0);
+}
+
+#btnGreen {
+    background: linear-gradient(green, #000);
+}
+
+#btnRed {
+    background: linear-gradient(red, #000);
+}
+
+#btnGreen:before {
+    background: green;
+}
+
+#btnRed:before {
+    background: red;
+}
+
+.feedback {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    margin-left: 530px;
+    margin-top: 20px;
+}
+
+.submitButton {
+    padding: 0.6rem 1.3rem;
+    background-color: -webkit-gradient(linear, left top, right top, from(var(--black-color)), to(var(--first-color)));
+    border: 2px solid #fafafa;
+    font-size: 0.95rem;
+    color: white;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 530px;
+    margin-top: 10px;
+}
+
+.submitButton:hover {
+    transform: scale(1.10);
+    background-color: white;
+    color: black;
+    letter-spacing: 1px;
 }

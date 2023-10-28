@@ -6,7 +6,7 @@ import { UserContext } from '../../App';
 export default function Navbar() {
   const { navMenu, navLogo, navLink, role } = styles
 
-  const { userRole } = useContext(UserContext);
+  const { userRole } = useContext(UserContext)
 
   return (
     <ul className={navMenu}>
