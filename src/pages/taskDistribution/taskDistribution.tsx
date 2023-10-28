@@ -32,7 +32,8 @@ export default function TaskDistribution() {
     {userRole === 'PM' ?
     <div className={buttons}>
       <Link to="/createTask" className={button}>Create Task</Link>
-      <Link to="/financialRequests" className={button}>Budget Negotiation</Link>
+      <Link to="/staffRecruitment" className={button}>Staff Recruitment</Link>
+      <Link to="/financialRequests" className={button}>Financial Requests</Link>
     </div> :
       userRole === 'ST' ?
       <>
