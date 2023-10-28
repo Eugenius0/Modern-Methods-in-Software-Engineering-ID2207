@@ -12,6 +12,7 @@ import CreateTask from './pages/createTask/createTask';
 import ErrorPage from './pages/errorPage/errorPage';
 import StaffRecruitment from './pages/staffRecruitment/staffRecruitment';
 import CreateRecruitmentRequest from './pages/createRecruitmentRequest/createRecruitmentRequest';
+import FinancialRequest from './pages/financialRequest/financialRequest';
 
 export const UserContext = createContext({ userRole: '', setUserRole: (role: string) => {} });
 
@@ -35,6 +36,7 @@ export default function App() {
             <Route path='/createTask' element={<CreateTask />} />
             <Route path='/staffRecruitment' element={<StaffRecruitment />} />
             <Route path='/createRecruitmentRequest' element={<CreateRecruitmentRequest />} />
+            <Route path='/financialRequest' element={<FinancialRequest />} />
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </div>

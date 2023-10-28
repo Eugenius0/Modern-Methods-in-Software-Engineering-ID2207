@@ -44,3 +44,11 @@ type User = {
     status: string,
   }
 
+  type FinancialRequest = {
+    id: number,
+    requestingDepartment: string,
+    projectReference: number,
+    requiredAmount: string,
+    Reason: string,
+    status: string,
+  }

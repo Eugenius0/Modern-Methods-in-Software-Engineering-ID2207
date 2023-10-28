@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "requestingDepartment": "Administration",
+      "projectReference": 1,
+      "requiredAmount": "$5000",
+      "Reason": "Purchase office equipment",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "requestingDepartment": "Services",
+      "projectReference": 2,
+      "requiredAmount": "$3000",
+      "Reason": "Hire additional staff",
+      "status": "approved"
+    },
+    {
+      "id": 3,
+      "requestingDepartment": "Production",
+      "projectReference": 3,
+      "requiredAmount": "$10000",
+      "Reason": "Invest in new machinery",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "requestingDepartment": "Financial",
+      "projectReference": 4,
+      "requiredAmount": "$8000",
+      "Reason": "Fund a marketing campaign",
+      "status": "rejected"
+    },
+    {
+      "id": 5,
+      "requestingDepartment": "Services",
+      "projectReference": 5,
+      "requiredAmount": "$6000",
+      "Reason": "Renovate the office space",
+      "status": "approved"
+    }
+  ]
+  
