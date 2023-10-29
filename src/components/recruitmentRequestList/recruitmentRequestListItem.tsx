@@ -2,28 +2,31 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 export type RecruitmentRequestListItemProps = {
-    recruitmentRequest: RecruitmentRequest
+    recruitmentRequest: RecruitmentRequest,
+    selectedItem: string,
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const RecruitmentRequestListItem = (props: RecruitmentRequestListItemProps) => {
 
-    const {item, details} = styles
-    const { recruitmentRequest } = props 
+    const {item, details, itemSelected} = styles
+    const { recruitmentRequest, selectedItem, setSelectedItem } = props 
 
     const [showDetails, setShowDetails] = useState(false)
 
     const toggleShowDetails = () => {
-      setShowDetails(!showDetails);
+        setShowDetails(!showDetails)
+        !showDetails ? setSelectedItem(recruitmentRequest.jobTitle) : setSelectedItem('')
     };
 
   return (
     <div key={recruitmentRequest.id}>
-        <div className={item} onClick={toggleShowDetails}>
+        <div className={recruitmentRequest.jobTitle === selectedItem ? itemSelected : item} onClick={toggleShowDetails}>
             {recruitmentRequest.jobTitle}
             <br /> <br />
             Contract Type: {recruitmentRequest.contractType}
         </div>
-        {showDetails && (
+        {recruitmentRequest.jobTitle === selectedItem && showDetails && (
           <div className={details}>
           Requesting Department: {recruitmentRequest.requestingDepartment} <br />
           Years of experience: {recruitmentRequest.yearsOfExperience} <br />

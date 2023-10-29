@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './styles.module.css'
 import financialRequestData from '../../mockData/financialRequestData.json'
 import { Link } from 'react-router-dom'
@@ -7,13 +7,15 @@ import { FinancialRequestList } from '../../components/financialRequestList'
 
 export default function Stafffinancial() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, rejected, buttons, button, btnGreen, btnRed} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, rejected, selected, buttons, button, btnGreen, btnRed} = styles
 
     const pendingRequests = financialRequestData?.filter((financialRequest) => financialRequest.status === "pending")
     const ApprovedRequests = financialRequestData?.filter((financialRequest) => financialRequest.status === "approved")
     const rejectedRequests = financialRequestData?.filter((financialRequest) => financialRequest.status === "rejected")
 
     const { userRole } = useContext(UserContext)
+
+    const [selectedItem, setSelectedItem] = useState('')
 
   return (
     <>
@@ -27,8 +29,15 @@ export default function Stafffinancial() {
     </div> :
     userRole === 'FM' ?
     <div className={buttons}>
+        {selectedItem !== '' && 
+        <>
+        <div className={selected}>
+        Selected Event Request: {selectedItem}
+        </div>
       <Link to="/financialRequest" className={button} id={btnGreen}>Approve</Link>
       <Link to="/financialRequest" className={button} id={btnRed}>Reject</Link>
+      </>
+    }
       </div> : <></>
     }
     <div className={gridContainer}>
@@ -38,7 +47,7 @@ export default function Stafffinancial() {
       </div>
       <div className={listContent}>
       {rejectedRequests.length !== 0 ?
-        <FinancialRequestList financialRequests={rejectedRequests} /> : <div>Empty list</div>}
+        <FinancialRequestList financialRequests={rejectedRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -47,7 +56,7 @@ export default function Stafffinancial() {
       </div>
       <div className={listContent}>
       {pendingRequests.length !== 0 ?
-        <FinancialRequestList financialRequests={pendingRequests} /> : <div>Empty list</div>}
+        <FinancialRequestList financialRequests={pendingRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -56,7 +65,7 @@ export default function Stafffinancial() {
       </div>
       <div className={listContent}>
       {ApprovedRequests.length !== 0 ?
-        <FinancialRequestList financialRequests={ApprovedRequests} /> : <div>Empty list</div>}
+        <FinancialRequestList financialRequests={ApprovedRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
     </div>

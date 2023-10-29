@@ -2,12 +2,14 @@ import React from 'react'
 import { TaskListItem } from './taskListItem'
 
 type TaskListProps = {
-    tasks: Task[]
+    tasks: Task[],
+    selectedItem: string,
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const TaskList = (props: TaskListProps) => {
 
-    const { tasks } = props
+    const { tasks, selectedItem, setSelectedItem } = props
 
   return (
     <>
@@ -15,6 +17,8 @@ export const TaskList = (props: TaskListProps) => {
         <TaskListItem
             key={task.id}
             task={task}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
         />
     ))}
     </>

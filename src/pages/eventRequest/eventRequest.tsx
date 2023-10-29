@@ -65,8 +65,12 @@ export default function EventRequest() {
         </> :
       userRole === 'AM' ?
       <div className={buttons}>
+        {selectedItem !== '' && 
+        <>
       <Link to="/eventRequest" className={button} id={btnGreen}>Approve</Link>
       <Link to="/eventRequest" className={button} id={btnRed}>Reject</Link>
+      </>
+      }
       </div> : <></>
     }
     <div className={gridContainer}>

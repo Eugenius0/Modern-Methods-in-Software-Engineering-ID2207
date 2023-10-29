@@ -2,12 +2,14 @@ import React from 'react'
 import { FinancialRequestListItem } from './financialRequestListItem'
 
 type FinancialRequestListProps = {
-    financialRequests: FinancialRequest[]
+    financialRequests: FinancialRequest[],
+    selectedItem: string,
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const FinancialRequestList = (props: FinancialRequestListProps) => {
 
-    const { financialRequests } = props
+    const { financialRequests, selectedItem, setSelectedItem } = props
 
   return (
     <>
@@ -15,6 +17,8 @@ export const FinancialRequestList = (props: FinancialRequestListProps) => {
         <FinancialRequestListItem
             key={financialRequest.id}
             financialRequest={financialRequest}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
         />
     ))}
     </>

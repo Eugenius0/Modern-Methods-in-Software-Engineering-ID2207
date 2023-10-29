@@ -7,7 +7,7 @@ import { TaskList } from '../../components/taskList'
 
 export default function TaskDistribution() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, buttons, button, submitButton} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, selected, buttons, button, submitButton} = styles
 
     const photographyTasks = taskData?.filter((task) => task.subTeam === "Photography" && task.status === "pending")
     const musicTasks = taskData?.filter((task) => task.subTeam === "Music")
@@ -17,6 +17,8 @@ export default function TaskDistribution() {
     const commentedtasks = taskData?.filter((task) => task.status === "commented")
 
     const { userRole } = useContext(UserContext)
+
+    const [selectedItem, setSelectedItem] = useState('')
 
     const [feedbackValue, setFeedbackValue] = useState('')
     const handleFeedbackChange = (event: any) => {
@@ -35,8 +37,11 @@ export default function TaskDistribution() {
       <Link to="/staffRecruitment" className={button}>Staff Recruitment</Link>
       <Link to="/financialRequests" className={button}>Financial Requests</Link>
     </div> :
-      userRole === 'ST' ?
+      userRole === 'ST' &&  selectedItem !== '' ?
       <>
+      <div className={selected}>
+        Selected Event Request: {selectedItem}
+        </div>
       <textarea
         rows={4}         
         cols={50}
@@ -57,7 +62,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {photographyTasks.length !== 0 ?
-        <TaskList tasks={photographyTasks} /> : <div>Empty list</div>}
+        <TaskList tasks={photographyTasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -66,7 +71,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {musicTasks.length !== 0 ?
-        <TaskList tasks={musicTasks} /> : <div>Empty list</div>}
+        <TaskList tasks={musicTasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -75,7 +80,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {graphDesignTasks.length !== 0 ?
-        <TaskList tasks={graphDesignTasks} /> : <div>Empty list</div>}
+        <TaskList tasks={graphDesignTasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -84,7 +89,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {decorationsTasks.length !== 0 ?
-        <TaskList tasks={decorationsTasks} /> : <div>Empty list</div>}
+        <TaskList tasks={decorationsTasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -93,7 +98,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {networkSupportTasks.length !== 0 ?
-        <TaskList tasks={networkSupportTasks} /> : <div>Empty list</div>}
+        <TaskList tasks={networkSupportTasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -102,7 +107,7 @@ export default function TaskDistribution() {
       </div>
       <div className={listContent}>
       {commentedtasks.length !== 0 ?
-        <TaskList tasks={commentedtasks} /> : <div>Empty list</div>}
+        <TaskList tasks={commentedtasks} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
     </div>
