@@ -2,12 +2,14 @@ import React from 'react'
 import { EventRequestListItem } from './eventRequestListItem'
 
 type EventRequestListProps = {
-    eventRequests: EventRequest[]
+    eventRequests: EventRequest[],
+    selectedItem: string,
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const EventRequestList = (props: EventRequestListProps) => {
 
-    const { eventRequests } = props
+    const { eventRequests, selectedItem, setSelectedItem } = props
 
   return (
     <>
@@ -15,6 +17,8 @@ export const EventRequestList = (props: EventRequestListProps) => {
         <EventRequestListItem
             key={eventRequest.id}
             eventRequest={eventRequest}
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
         />
     ))}
     </>

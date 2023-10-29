@@ -7,7 +7,7 @@ import { UserContext } from '../../App'
 
 export default function EventRequest() {
 
-    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, buttons, button, submitButton, btnGreen, btnRed} = styles
+    const {container, gridContainer, title, eventRequestList, listContent, pending, scsApproved, fmFeedback, amApproved, scheduledMeeting, rejected, feedback, selected, buttons, button, submitButton, btnGreen, btnRed} = styles
 
     const pendingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "pending")
     const scsApprovedRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "scsApproved")
@@ -17,6 +17,8 @@ export default function EventRequest() {
     const scheduledMeetingRequests = eventRequestData?.filter((eventRequest) => eventRequest.status === "scheduledMeeting")
 
     const { userRole } = useContext(UserContext)
+
+    const [selectedItem, setSelectedItem] = useState('')
 
     const [feedbackValue, setFeedbackValue] = useState('')
     const handleFeedbackChange = (event: any) => {
@@ -36,8 +38,15 @@ export default function EventRequest() {
     </div> :
     userRole === 'SCS' ?
     <div className={buttons}>
-      <Link to="/eventRequest" className={button} id={btnGreen}>Approve</Link>
-      <Link to="/eventRequest" className={button} id={btnRed}>Reject</Link>
+        {selectedItem !== '' && 
+        <>
+        <div className={selected}>
+        Selected Event Request: {selectedItem}
+        </div>
+        <Link to="/eventRequest" className={button} id={btnGreen}>Approve</Link>
+        <Link to="/eventRequest" className={button} id={btnRed}>Reject</Link>
+        </>
+        }
       <Link to="/eventRequestDetails" className={button}>Event Request Details</Link>
       </div> :
       userRole === 'FM' ?
@@ -67,7 +76,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {rejectedRequests.length !== 0 ?
-        <EventRequestList eventRequests={rejectedRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={rejectedRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -76,7 +85,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {pendingRequests.length !== 0 ?
-        <EventRequestList eventRequests={pendingRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={pendingRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -85,7 +94,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {scsApprovedRequests.length !== 0 ?
-        <EventRequestList eventRequests={scsApprovedRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={scsApprovedRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -94,7 +103,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {fmFeedbackRequests.length !== 0 ?
-        <EventRequestList eventRequests={fmFeedbackRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={fmFeedbackRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -103,7 +112,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {amApprovedRequests.length !== 0 ?
-        <EventRequestList eventRequests={amApprovedRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={amApprovedRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
       <div className={eventRequestList}>
@@ -112,7 +121,7 @@ export default function EventRequest() {
       </div>
       <div className={listContent}>
       {scheduledMeetingRequests.length !== 0 ?
-        <EventRequestList eventRequests={scheduledMeetingRequests} /> : <div>Empty list</div>}
+        <EventRequestList eventRequests={scheduledMeetingRequests} selectedItem={selectedItem} setSelectedItem={setSelectedItem} /> : <div>Empty list</div>}
       </div>
       </div>
     </div>

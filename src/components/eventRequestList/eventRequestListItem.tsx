@@ -3,17 +3,20 @@ import styles from './styles.module.css'
 
 export type EventRequestListItemProps = {
     eventRequest: EventRequest
+    selectedItem: string,
+    setSelectedItem: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export const EventRequestListItem = (props: EventRequestListItemProps) => {
 
     const {item, details} = styles
-    const { eventRequest } = props 
+    const { eventRequest, selectedItem, setSelectedItem } = props 
 
     const [showDetails, setShowDetails] = useState(false)
 
     const toggleShowDetails = () => {
-      setShowDetails(!showDetails);
+      setShowDetails(!showDetails)
+      showDetails ? setSelectedItem('') : setSelectedItem(eventRequest.eventType)
     };
 
   return (
