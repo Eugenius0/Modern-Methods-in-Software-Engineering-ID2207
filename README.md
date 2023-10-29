@@ -16,6 +16,16 @@ To login there is some mockData for the Users which can be found in the auth.tsx
     { id: 8, email: 'user8@sep.com', password: 'password8', role: 'SHR' },
 
     So for example if you want to login as Project manager you indicate user5@sep.com as mail and password5 as password
+    
+<img width="1512" alt="image" src="https://github.com/Eugenius0/SEP/assets/123998667/71a32a91-5918-4d21-9576-df46b70faad5">
+
+<img width="1510" alt="image" src="https://github.com/Eugenius0/SEP/assets/123998667/7e3cbd30-1f5e-4646-860f-18f6bba83917">
+
+<img width="1512" alt="image" src="https://github.com/Eugenius0/SEP/assets/123998667/b9ff061d-5b06-4a04-a8e8-84813baeb8e2">
+
+<img width="1512" alt="image" src="https://github.com/Eugenius0/SEP/assets/123998667/ec18b511-2cc3-497c-8c00-ee0475b2d20f">
+
+<img width="1512" alt="image" src="https://github.com/Eugenius0/SEP/assets/123998667/a711d4a7-b758-4945-99f1-eb7aff659e05">
 
 
 # Getting Started with Create React App
