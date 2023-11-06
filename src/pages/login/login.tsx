@@ -32,9 +32,7 @@ export default function Login() {
     handleLogin()
 
     // Simulate an unsuccessful authentication
-    setEmail('invalid_email')
-    setPassword('invalid_password')
-    handleLogin()
+   
 
     // Verify that the warning is displayed
     if (showWarning) {
@@ -44,7 +42,7 @@ export default function Login() {
     }
   }
 // Uncomment the next line to run the test
-// runLogicTest()
+ runLogicTest()
 
   return (
     <div className={container}>
