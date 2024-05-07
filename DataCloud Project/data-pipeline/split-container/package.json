@@ -1,0 +1,12 @@
+{
+    "name": "split-container",
+    "version": "1.0.0",
+    "description": "Container for splitting CSV files",
+    "scripts": {
+        "start": "node split_script.js"
+    },
+    "dependencies": {
+        "csv-parser": "^3.0.0",
+        "csv-writer": "^1.6.0"
+    }
+}
