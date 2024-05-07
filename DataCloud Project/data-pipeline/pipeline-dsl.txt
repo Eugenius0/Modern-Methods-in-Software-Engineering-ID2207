@@ -1,0 +1,54 @@
+Pipeline Root {
+	communicationMedium: medium 
+	steps:
+		- data-processing step Unzip
+			implementation: container-implementation image: 'unzip-container'
+			environmentParameters: {
+
+			}
+			resourceProvider: 
+			executionRequirement:
+				hardRequirements:					
+
+
+		- data-processing step TSVtoCSV
+			implementation: container-implementation image: 'tsv-to-csv-container'
+			environmentParameters: {
+
+			}
+			resourceProvider: 
+			executionRequirement:
+				hardRequirements:					
+			previous: [Unzip]
+
+		- data-processing step Split
+			implementation: container-implementation image: 'split-container'
+			environmentParameters: {
+
+			}
+			resourceProvider: 
+			executionRequirement:
+				hardRequirements:					
+			previous: [TSVtoCSV]
+
+		- data-processing step Transform
+			implementation: container-implementation image: 'transform-container'
+			environmentParameters: {
+
+			}
+			resourceProvider: 
+			executionRequirement:
+				hardRequirements:					
+			previous: [Split]
+
+		- data-processing step ToArango
+			implementation: container-implementation image: 'to-arango-container'
+			environmentParameters: {
+
+			}
+			resourceProvider: 
+			executionRequirement:
+				hardRequirements:					
+			previous: [Transform]
+}
+

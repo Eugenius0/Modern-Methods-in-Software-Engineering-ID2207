@@ -1,0 +1,31 @@
+version: '3'
+services:
+  unzip-container:
+    build:
+      context: ./unzip-container
+    volumes:
+      - ./data
+
+  tsv-to-csv-container:
+    build:
+      context: ./tsv-to-csv-container
+    volumes:
+      - ./data
+
+  split-container:
+    build:
+      context: ./split-container
+    volumes:
+      - ./data
+
+  transform-container:
+    build:
+      context: ./transform-container
+    volumes:
+      - ./data
+
+  to-arango-container:
+    build:
+      context: ./to-arango-container
+    volumes:
+      - ./data

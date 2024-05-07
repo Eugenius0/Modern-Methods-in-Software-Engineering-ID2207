@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: pipeline-
+spec:
+  entrypoint: pipeline
+  templates:
+  - name: pipeline
+    dag:
+      tasks:
+      - name: unzip
+        template: unzip
+      - name: tsv-to-csv
+        template: tsv-to-csv
+        dependencies: [unzip]
+      - name: split2
+        template: split
+        dependencies: [tsv-to-csv]
+      - name: transform
+        template: transform
+        dependencies: [split2]
+      - name: to-arango
+        template: to-arango
+        dependencies: [transform]
+
+  - name: unzip
+    container:
+      image: eugenius00/unzip-container
+      command: ["/bin/sh", "-c"]
+      args: ["chmod +x ./unzip_script.js ./data/text.zip ./data/output"]
+
+  - name: tsv-to-csv
+    container:
+      image: eugenius00/tsv-to-csv-container
+      command: ["/bin/sh", "-c"]
+      args: ["chmod +x ./tsv_to_csv_script.js ./data/sample.tsv ./data/output"]
+
+  - name: split
+    container:
+      image: eugenius00/split-container
+      command: ["/bin/sh", "-c"]
+      args: ["chmod +x ./split_script.js ./data/people.csv ./data/output"]
+
+  - name: transform
+    container:
+      image: eugenius00/transform-container
+      command: ["/bin/sh", "-c"]
+      args: ["chmod +x ./transform_script.js ./data/people.csv ./data/output"]
+
+  - name: to-arango
+    container:
+      image: eugenius00/to-arango-container
+      command: ["/bin/sh", "-c"]
+      args: ["chmod +x ./to_arango_script.js ./data/people.csv ./data/output"]
+
