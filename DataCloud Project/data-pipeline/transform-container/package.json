@@ -1,0 +1,8 @@
+{
+    "name": "transform-container",
+    "version": "1.0.0",
+    "description": "Container for transforming CSV files",
+    "scripts": {
+        "start": "node transform_script.js"
+    }
+}
