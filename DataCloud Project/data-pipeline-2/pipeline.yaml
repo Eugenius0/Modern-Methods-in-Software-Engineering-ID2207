@@ -1,0 +1,63 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: data-cloud-pipeline-
+spec:
+  entrypoint: data-cloud-pipeline
+  templates:
+  - name: data-cloud-pipeline
+    steps:
+    - - name: start
+        template: start
+    - - name: generate-sample-data
+        template: generate-sample-data
+        arguments:
+          parameters:
+          - name: Frequency
+            value: "9"
+          - name: Duration
+            value: "9s"
+          - name: MQTT_HOST
+            value: "TGW"
+          - name: MQTT_CLIENT_ID
+            value: "TGDATACLOUD"
+          - name: MQTT_PASS
+            value: "PASS"
+    - - name: receive-data-from-mqtt
+        template: receive-data-from-mqtt
+        arguments:
+          parameters:
+          - name: RABBITMQ_HOST
+            value: "oslo.sct.sintef"
+          - name: RABBITMQ_USERNAME
+            value: "tell"
+          - name: RABBITMQ_PASSWORD
+            value: "???"
+    - - name: create-notification
+        template: create-notification
+    - - name: filter-notifications
+        template: filter-notifications
+    - - name: end
+        template: end
+  - name: start
+    container:
+      image: ""
+  - name: generate-sample-data
+    container:
+      image: registry.cloud/tellucare-edge
+      command: ["node", "generateSampleData.js"]
+  - name: receive-data-from-mqtt
+    container:
+      image: registry.cloud/tellucare-api:latest
+      command: ["node", "receiveDataFromMQTT.js"]
+  - name: create-notification
+    container:
+      image: registry.sintef.cloud/application-logic:latest
+      command: command: ["node", "createNotification.js"]
+  - name: filter-notifications
+    container:
+      image: notification-filter:latest
+      command: command: ["node", "filterNotifications.js"]
+  - name: end
+    container:
+      image: ""

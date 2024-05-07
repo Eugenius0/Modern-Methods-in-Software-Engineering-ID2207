@@ -1,0 +1,290 @@
+{
+  "shape": "Container",
+  "isContainer": true,
+  "elements": [
+    {
+      "width": 50,
+      "height": 50,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "7ee0a46c-4563-4440-8ba9-d3714b35a7a5",
+          "position": { "x": 0, "y": 25 },
+          "type": 0
+        },
+        {
+          "id": "1fa17db5-c592-441f-8d9e-66c94d09099f",
+          "position": { "x": 50, "y": 25 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-source",
+        "stepImplementation": "container-implementation",
+        "image": "",
+        "environmentParameters": [],
+        "resourceProvider": "",
+        "executionRequirement": { "hardRequirements": [] },
+        "additional": ""
+      },
+      "name": "Start",
+      "id": "8094539f-eb69-454b-8296-46de0d0e0d1a",
+      "templateId": "3cd8fffc-5369-44c4-ad4a-5efb24fb8339",
+      "type": 0,
+      "position": { "x": 80, "y": 210 },
+      "elements": []
+    },
+    {
+      "width": 50,
+      "height": 50,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "f66caeea-9f96-447b-aed6-f43a00228937",
+          "position": { "x": 0, "y": 25 },
+          "type": 0
+        },
+        {
+          "id": "b97e812f-ed18-45a6-b4b8-ee172244d669",
+          "position": { "x": 50, "y": 25 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-source",
+        "stepImplementation": "container-implementation",
+        "image": "",
+        "environmentParameters": [],
+        "resourceProvider": "",
+        "executionRequirement": { "hardRequirements": [] },
+        "additional": ""
+      },
+      "name": "End",
+      "id": "9dee3958-b864-4787-b504-b58e0288ac22",
+      "templateId": "4ca25f16-8d31-42c6-a004-1ec18af64479",
+      "type": 0,
+      "position": { "x": 940, "y": 380 },
+      "elements": []
+    },
+    {
+      "width": 160,
+      "height": 100,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "a5fab760-8f26-497c-8a5f-ccfc01fc3c09",
+          "position": { "x": 0, "y": 50 },
+          "type": 0
+        },
+        {
+          "id": "98227044-4233-45aa-9cf1-2a6242e2942f",
+          "position": { "x": 162, "y": 50 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-source",
+        "stepImplementation": "container-implementation",
+        "image": "registry.cloud/tellucare-edge",
+        "additional": "",
+        "environmentParameters": [
+          { "key": "Frequency", "value": "9" },
+          { "key": "Duration", "value": "9s" },
+          { "key": "MQTT_HOST", "value": "TGW" },
+          { "key": "MQTT_CLIENT_ID", "value": "TGDATACLOUD" },
+          { "key": "MQTT_PASS", "value": "PASS" }
+        ],
+        "resourceProvider": "",
+        "executionRequirement": { "hardRequirements": [] }
+      },
+      "name": "GenerateSampleData",
+      "id": "b36472f1-8867-44e1-89bf-dc9622f95f00",
+      "templateId": "e7dae31e-16e4-49aa-88e6-f37965e9b7b9",
+      "type": 0,
+      "position": { "x": 180, "y": 190 },
+      "elements": []
+    },
+    {
+      "width": 243,
+      "height": 100,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "624caa05-a11f-473a-b97e-ac756d83678a",
+          "position": { "x": 0, "y": 50 },
+          "type": 0
+        },
+        {
+          "id": "cfa19acb-6794-459f-b268-e52b8e432125",
+          "position": { "x": 243, "y": 50 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-source",
+        "stepImplementation": "container-implementation",
+        "image": "registry.cloud/tellucare-api:latest",
+        "additional": "",
+        "environmentParameters": [
+          { "key": "RABBITMQ_HOST", "value": "oslo.sct.sintef" },
+          { "key": "RABBITMQ_USERNAME", "value": "tell" },
+          { "key": "RABBITMQ_PASSWORD", "value": "???" }
+        ],
+        "resourceProvider": "",
+        "executionRequirement": { "hardRequirements": [] }
+      },
+      "name": "ReceiveDataFromMQTT",
+      "id": "83892ba8-f08e-44e4-8e41-c680c6e99a06",
+      "templateId": "e3fcc8d6-1292-41a3-953d-7a76830ef45a",
+      "type": 0,
+      "position": { "x": 390, "y": 260 },
+      "elements": []
+    },
+    {
+      "width": 200,
+      "height": 100,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "b6c42a95-7ce5-4eb4-84fa-b581ac191586",
+          "position": { "x": 0, "y": 50 },
+          "type": 0
+        },
+        {
+          "id": "8ce92de3-7318-4390-81d3-0709b8c8d9ed",
+          "position": { "x": 200, "y": 50 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-source",
+        "stepImplementation": "container-implementation",
+        "image": "registry.sintef.cloud/application-logic:latest",
+        "additional": "",
+        "environmentParameters": [],
+        "resourceProvider": "",
+        "executionRequirement": { "hardRequirements": [] }
+      },
+      "name": "CreateNotification",
+      "id": "161c04cc-f1c9-4588-87fc-2cd064c07934",
+      "templateId": "7fb5ad7d-a4aa-4a22-af7d-bbfcb014608d",
+      "type": 0,
+      "position": { "x": 680, "y": 330 },
+      "elements": []
+    },
+    {
+      "id": "2589dfaa-247a-4070-b7d3-b0abc9dc1101",
+      "sourceShapeId": "8094539f-eb69-454b-8296-46de0d0e0d1a",
+      "sourceConnectionPointId": "1fa17db5-c592-441f-8d9e-66c94d09099f",
+      "destShapeId": "b36472f1-8867-44e1-89bf-dc9622f95f00",
+      "destConnectionPointId": "a5fab760-8f26-497c-8a5f-ccfc01fc3c09",
+      "type": 1
+    },
+    {
+      "id": "8a5be1c1-c0c5-4447-8b4a-fa3cea8127de",
+      "sourceShapeId": "b36472f1-8867-44e1-89bf-dc9622f95f00",
+      "sourceConnectionPointId": "98227044-4233-45aa-9cf1-2a6242e2942f",
+      "destShapeId": "83892ba8-f08e-44e4-8e41-c680c6e99a06",
+      "destConnectionPointId": "624caa05-a11f-473a-b97e-ac756d83678a",
+      "type": 1
+    },
+    {
+      "id": "6dd82081-dafe-4229-a4a5-244cabff20cd",
+      "sourceShapeId": "83892ba8-f08e-44e4-8e41-c680c6e99a06",
+      "sourceConnectionPointId": "cfa19acb-6794-459f-b268-e52b8e432125",
+      "destShapeId": "161c04cc-f1c9-4588-87fc-2cd064c07934",
+      "destConnectionPointId": "b6c42a95-7ce5-4eb4-84fa-b581ac191586",
+      "type": 1
+    },
+    {
+      "id": "69b4e18e-8aa7-429f-9674-b71d4be85133",
+      "sourceShapeId": "161c04cc-f1c9-4588-87fc-2cd064c07934",
+      "sourceConnectionPointId": "8ce92de3-7318-4390-81d3-0709b8c8d9ed",
+      "destShapeId": "9dee3958-b864-4787-b504-b58e0288ac22",
+      "destConnectionPointId": "f66caeea-9f96-447b-aed6-f43a00228937",
+      "type": 1
+    },
+    {
+      "width": 200,
+      "height": 100,
+      "shape": "Rectangle",
+      "properties": [],
+      "connectionPoints": [
+        {
+          "id": "a3895889-fee5-446a-9cb4-9d8b248d378a",
+          "position": { "x": 0, "y": 50 },
+          "type": 0
+        },
+        {
+          "id": "13d5ecb9-7b97-4690-aa61-fed71133cfff",
+          "position": { "x": 200, "y": 50 },
+          "type": 1
+        }
+      ],
+      "parameters": {
+        "stepType": "data-processing",
+        "stepImplementation": "container-implementation",
+        "image": "notification-filter:latest",
+        "additional": "triggers: NotificationForm\nresourceProvider: RaspberryPi4",
+        "environmentParameters": [
+          { "key": "NOTIFICATION_TYPE", "value": "email" },
+          { "key": "DEBUG_MODE", "value": "false" }
+        ],
+        "resourceProvider": "",
+        "executionRequirement": {
+          "hardRequirements": [
+            { "reqType": "imageReq" },
+            { "reqType": "osRequirement", "os-type": "Linux", "is-64": true },
+            {
+              "reqType": "quantitativeRequirement",
+              "min-cpu": 1,
+              "max-cpu": 1024,
+              "min-ram-mb": 0,
+              "max-ram-mb": 2047,
+              "min-storage-mb": 0,
+              "max-storage-mb": 0,
+              "cpu-frequency": 50000000,
+              "cpu-no-core": 0,
+              "gpu-availability": false
+            }
+          ]
+        }
+      },
+      "name": "FilterNotifications",
+      "id": "ae2ae6bb-ae79-493c-82b2-0bf184c75a55",
+      "templateId": "e0ad47f3-3316-4997-b617-1fec57c3f7ed",
+      "type": 0,
+      "position": { "x": 500, "y": 500 },
+      "elements": []
+    }
+  ],
+  "connectionPoints": [
+    {
+      "id": "1",
+      "position": { "x": 0, "y": 50 },
+      "type": 0,
+      "condition": null
+    },
+    {
+      "id": "2",
+      "position": { "x": 200, "y": 50 },
+      "type": 1,
+      "condition": null
+    }
+  ],
+  "properties": [],
+  "width": 200,
+  "height": 100,
+  "name": "DataCloud",
+  "id": "702ff695-3312-4803-af08-6e0170980bb8",
+  "templateId": "a1b61eae-ea00-4787-8e83-1cc5f11895bb",
+  "type": 0,
+  "position": { "x": 500, "y": 500 },
+  "canHaveChildren": true,
+  "resourceProviders": []
+}
