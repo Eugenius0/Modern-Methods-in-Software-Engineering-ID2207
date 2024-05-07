@@ -1,0 +1,11 @@
+{
+    "name": "to-arango-container",
+    "version": "1.0.0",
+    "description": "Container for loading data into ArangoDB",
+    "scripts": {
+      "start": "node to_arango_script.js"
+    },
+    "dependencies": {
+    }
+  }
+  

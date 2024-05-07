@@ -1,0 +1,15 @@
+{
+    "name": "my-data-pipeline",
+    "version": "1.0.0",
+    "description": "Data Pipeline",
+    "scripts": {
+      "start": "docker-compose up --build",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "unzipper": "^0.10.11"
+    },
+    "devDependencies": {
+    }
+  }
+  
