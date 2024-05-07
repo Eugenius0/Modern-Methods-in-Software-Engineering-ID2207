@@ -1,0 +1,11 @@
+{
+    "name": "tsv-to-csv-container",
+    "version": "1.0.0",
+    "description": "Container for TSV to CSV conversion",
+    "scripts": {
+        "start": "node tsv_to_csv_script.js"
+    },
+    "dependencies": {
+        "csv-writer": "^1.6.0"
+    }
+}
